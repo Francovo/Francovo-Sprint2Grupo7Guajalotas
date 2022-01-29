@@ -1,0 +1,120 @@
+.Container-Detalles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Container-Info{
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    word-break:break-all;
+    margin: auto;
+    margin-top: -2em;
+    margin-bottom: 1rem;
+    width: 13rem;
+
+}
+
+.BtnBack{
+    background: transparent;
+    margin: 2rem 1rem;
+    border: none;
+    cursor: pointer; 
+}
+
+
+.ImageSelect{
+    width: 13rem;
+    display: flex;
+    margin: auto;
+}
+
+
+.contenedor-botones{
+    display: inherit;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    width: 50%;
+}
+
+.Botones-mas-menos{
+    display: flex;
+    margin: auto;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;      
+}
+
+h6{
+    text-align: center;
+    margin: 1px 0;
+    color: red;
+}
+
+.Cantidad{
+    margin: 1rem;
+    font-size: larger;
+}
+
+.botonMasyMenos{   
+    cursor: pointer;
+    justify-content: center;
+    border: none;
+    background: none;
+}
+
+.btnAnadir{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+    height: 3rem;
+    border-radius: 10px;
+    background-color: orange;
+    font-size: 20px;
+    // position: fixed;
+}
+
+
+.container-Sabores-YFuncion{
+
+    border: solid red;
+    display: flex;
+
+        .BotonSabores{
+            display: flex;
+            flex-direction: column;
+            width: 15%;
+
+            cursor: pointer;
+            background-color: transparent;
+        }
+        
+        .ImagenSabores{
+            border: none;
+            width: 4rem;
+        }
+    }
+
+
+
+
+    .Container-Combos{
+        
+
+        .Combos-btn{
+    
+        }
+    
+        .Combos-img{
+    
+        }
+    }

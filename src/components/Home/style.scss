@@ -1,0 +1,59 @@
+body{
+    background-color: #f2f2f2;
+}
+
+
+.texto{
+    padding: 1rem 1.5rem;
+    margin: 0 3rem 0 1.5rem;
+    display: inline-flex;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.Logo{
+    margin: 30px;
+    width: 6rem;
+    cursor: pointer;
+}
+
+.Sabor{
+    display: flex;
+    margin: 0 2rem;
+    margin-top: 1.5rem;
+    background-color: #E7E7E7;
+    height: 50px;
+    padding: 0 1rem;
+    border-radius: 30px;
+    
+    .iconoBusqueda{
+        margin-top: 0.7rem;
+        cursor: pointer;
+        width: 3rem;
+    }
+    .InputSabor{
+        font-size:medium;
+        background-color: #E7E7E7;
+        border: none;
+        outline: none;
+    }
+}
+
+
+.Categorias{
+    margin: 1.3rem 1.6rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.BotonCate{
+    font-weight: bold;
+    color: #9A9A9D;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        color: orangered;
+        border-bottom: solid orangered;
+    }
+}

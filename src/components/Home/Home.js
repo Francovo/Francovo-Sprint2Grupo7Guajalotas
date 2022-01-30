@@ -1,16 +1,29 @@
 import React, { useState } from "react";
 import "./style.scss";
 import { FiSearch } from "react-icons/fi";
-import { Recorrer} from "./Categorias/Recorrer";
+import { Recorrer } from "./Categorias/Recorrer";
+import { BsCart2 } from "react-icons/bs";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-
+const A = styled.a`
+  display: flex;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  cursor: pointer;
+`;
 
 const Home = () => {
   const [Pagina, setPagina] = useState("Guajolotas");
 
   return (
     <div className="Container">
-
+      <Link to="/Carrito">
+        <A>
+          <BsCart2 size={25} />
+        </A>
+      </Link>
       <div className="Logo">
         <a href="/">
           <img
@@ -44,7 +57,7 @@ const Home = () => {
         </button>
       </div>
 
-    <Recorrer CategoriaActual={Pagina}/>
+      <Recorrer CategoriaActual={Pagina} />
     </div>
   );
 };

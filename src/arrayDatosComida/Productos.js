@@ -51,7 +51,7 @@ export const Products = [
     id: 7,
     image:
       "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/B-ARROZ_CON_LECHE_qebvxg.png",
-    color: "Atole de Arroz con Leche",
+    color: "Atole de Arroz",
     precio: "12 MXN",
     categorias: 2,
   },

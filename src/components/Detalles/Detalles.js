@@ -172,14 +172,24 @@ const Detalles = () => {
         {Combo ? (
           <>
             {Combo.map((combos) => (
-              <button className="Combos-btn">
-                <img src={combos.image} className="Combos-img" />
-                <div className="Container-Info">
-                <h1 className="Combos-Color">{combos.color}</h1>
-                <h1 className="Combos-Precio"> + {combos.precio}</h1>
-                </div>
+              // <button className="Combos-btn">
+              //   <img src={combos.image} className="Combos-img" />
+              //   <div className="Container-Info">
+              //   <h1 className="Combos-Color">{combos.color}</h1>
+              //   <h1 className="Combos-Precio"> + {combos.precio}</h1>
+              //   </div>
 
-              </button>
+              // </button>
+              <div className="Combos-btn">
+              <label className="LabelCombos">
+                <input type="checkbox"  className="input"/>
+                  <img src={combos.image} className="Combos-img" />
+                  <div className="Container-Info">
+                    <h1 className="Combos-Color">{combos.color}</h1>
+                    <h1 className="Combos-Precio"> + {combos.precio}</h1>
+                  </div>
+                </label>
+              </div>
             ))}
           </>
         ) : (
@@ -188,7 +198,9 @@ const Detalles = () => {
       </div>
 
       <button className="btnAnadir">
-       <h4>Monto Total:<strong> $ {TotalPagar} MXN</strong></h4> 
+        <h4>
+          Monto Total:<strong> $ {TotalPagar} MXN</strong>
+        </h4>
       </button>
     </div>
   );

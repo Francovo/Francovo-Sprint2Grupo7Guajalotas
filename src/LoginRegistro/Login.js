@@ -83,7 +83,7 @@ class Login extends Component {
               </button>
 
               <button className="irRegistro">
-              <Link className="linkRegistro" to={`/Registro `}>
+              <Link className="linkRegistro" to={`/Registro`}>
                 Registro
               </Link>
               </button>

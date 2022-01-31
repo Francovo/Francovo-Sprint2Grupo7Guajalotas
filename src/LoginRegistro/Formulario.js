@@ -47,17 +47,17 @@ const {nombre, correo, password}=usuario;
                 <div className="containerRegistro">
                 <form onSubmit={handleSubmit}>
                         <div >
-                            <label className='label'>Nombre</label >
+                            <label className='label'>Nombre:</label >
                             <input className="nombre" type="text" name="nombre" value={nombre} onChange={handleChanged} placeholder="Ingresa tu nombre" />
                         </div>
 
                         <div>
-                            <label className='label'>Correo Electronico</label>
+                            <label className='label'>Correo Electronico:</label>
                             <input className="email" type="email" name="correo" value={correo} onChange={handleChanged} placeholder="Ingresa tu correo" />
                         </div>
 
                         <div >
-                            <label className="label">Password</label>
+                            <label className="label">Password:</label>
                             <input className='password' type="password" name="password" value={password} onChange={handleChanged} placeholder="Password" />
                         </div>
 

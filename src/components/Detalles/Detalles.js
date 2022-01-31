@@ -182,7 +182,7 @@ const Detalles = () => {
               <div className="Combos-btn">
               <label className="LabelCombos">
                 <input type="checkbox"  className="input"/>
-                  <img src={combos.image} className="Combos-img" />
+                  <img src={combos.image} className="Combos-img" alt=""/>
                   <div className="Container-Info">
                     <h1 className="Combos-Color">{combos.color}</h1>
                     <h1 className="Combos-Precio"> + {combos.precio}</h1>

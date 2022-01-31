@@ -6,7 +6,7 @@ import { categorias, Products } from "../../arrayDatosComida/Productos";
 import "./Detalles.scss";
 import { BsCart2 } from "react-icons/bs";
 import styled from "styled-components";
-import Contador from "./Contador";
+import Contador from './Contador'
 import { arregloCompras } from "../../helpers/arregloCompras";
 
 const A = styled.a`
@@ -19,6 +19,7 @@ const A = styled.a`
 
 const Detalles = () => {
   const { IdProduct } = useParams();
+  const navegar = useNavigate();
 
   const [ProductoS, setProductoS] = useState(null);
   const [CategoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
@@ -29,9 +30,7 @@ const Detalles = () => {
   const [SaboresColor, setSaboresColor] = useState(null);
 
   const { Conteo, Mensaje, TotalPagar, handleRestar, handleSumar } = Contador(1, 0, IdProduct)
-
-  const navegar = useNavigate();
-
+  
   useEffect(() => {
     const nuevoProducto = Products.find(
       (Produ) => Produ.id.toString() === IdProduct
@@ -73,7 +72,7 @@ const Detalles = () => {
     } else {
       console.log("ERROR UnU");
     }
-  }, []);
+  }, [IdProduct]);
 
   const handleAddPurchase = (e) => {
        e.preventDefault()
@@ -182,7 +181,7 @@ const Detalles = () => {
               <div className="Combos-btn">
               <label className="LabelCombos">
                 <input type="checkbox"  className="input"/>
-                  <img src={combos.image} className="Combos-img" />
+                  <img src={combos.image} className="Combos-img" alt=""/>
                   <div className="Container-Info">
                     <h1 className="Combos-Color">{combos.color}</h1>
                     <h1 className="Combos-Precio"> + {combos.precio}</h1>

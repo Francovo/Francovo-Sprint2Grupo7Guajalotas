@@ -48,7 +48,7 @@ const {nombre, correo, password}=usuario;
                 <form onSubmit={handleSubmit}>
                         <div >
                             <label className='label'>Nombre:</label >
-                            <input className="nombre" type="text" name="nombre" value={nombre} onChange={handleChanged} placeholder="Ingresa tu nombre" />
+                            <input className="email" type="text" name="nombre" value={nombre} onChange={handleChanged} placeholder="Ingresa tu nombre" />
                         </div>
 
                         <div>

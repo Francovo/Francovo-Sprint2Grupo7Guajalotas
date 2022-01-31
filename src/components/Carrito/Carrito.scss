@@ -1,0 +1,141 @@
+.container-carrito{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-carrito-vacio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+.btnBackC {
+    background: transparent;
+    margin: 2rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.etiqueta-carrito{
+    display: inherit;
+    justify-content: center;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: -2.5rem;
+
+    color: #000000;
+}
+
+.imagen-compra{
+    width: 5rem;
+    height: 5rem
+}
+
+.imagen-carrito-vacio{
+    width: 8rem;
+    height: 8rem;
+}
+
+.container-compra{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 1rem 1rem 0.1rem 0;
+    width: 100%;
+    height: 5rem;
+}
+
+.container-nombre-cantidad{
+    position: relative;
+    top: 0.1rem;
+}
+
+.nombre{
+    margin: 1.5rem 0 0 0.2rem;
+    font-size: 12px;
+    height: fit-content;
+    border: none;
+}
+
+.cantidad{
+    color: orangered;
+    font-size: 12px;
+    height: fit-content;
+}
+
+.precio{
+    position: relative;
+    top: 1.5rem;
+    color: orangered;
+    font-size: 14px;
+    height: fit-content;    
+}
+
+.container-total{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 1rem 1rem 0;
+    width: 100%;
+    height: 4rem;
+    border-radius: 30px;
+}
+
+.precio-total{
+    color: orangered;
+    font-size: 14px;
+    height: fit-content;  
+    position: relative;
+    right: 1rem;  
+}
+
+.etiqueta-total{
+    position: relative;
+    left: 1rem;
+}
+
+.btn-pagar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    
+    position: absolute;
+    width: 90%;
+    height: 69px;
+    right: 18px;
+    bottom: 16px;
+    
+    // /* Primary */
+    
+    background: #FA4A0C;
+    // border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    
+    // /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 10px 0px; 
+
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.opacidad-btn-carrito{
+    opacity: 0.3;
+    border: none;
+    cursor: default;
+}
+

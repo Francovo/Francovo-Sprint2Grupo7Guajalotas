@@ -122,26 +122,32 @@ export const categorias = [
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/verde_qen9tt.png",
+        color: "Verde"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/mole_ngf5v0.png",
+          color: "Mole"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/rajas_pwf8w2.png",
+          color: "Rajas"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/piña_hbynkk.png",
+          color: "Piña"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/pasas_szehm7.png",
+          color: "Pasas"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/guayaba_iqyc42.png",
+          color: "Guayaba"
       },
     ],
 
@@ -155,18 +161,22 @@ export const categorias = [
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/champurrado_bxhadd.png",
+          color: "Champurrado"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/arroz_con_leche_kk1w3l.png",
+          color: "Atole de Arroz"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890603/chocolate_yig7fz.png",
+          color: "Chocolate Caliente",
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/cafe_xdkts3.png",
+          color: "Cafe Negro"
       },
     ],
     combo: [1,2,3,4,5]
@@ -179,26 +189,32 @@ export const categorias = [
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/verde_qen9tt.png",
+          color: "Tamal Verde"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/mole_ngf5v0.png",
+          color: "Tamal de Mole"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/rajas_pwf8w2.png",
+          color: "Tamal de Rajas"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/piña_hbynkk.png",
+          color: "Tamal de Piña"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/pasas_szehm7.png",
+          color: "Tamal de Pasas"
       },
       {
         image:
           "https://res.cloudinary.com/aca-geek/image/upload/v1642890604/guayaba_iqyc42.png",
+          color: "Tamal de Guayaba"
       },
     ],
     combo: [6,7,8,9]

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { categorias, Products } from "../../arrayDatosComida/Productos";
 import "./Detalles.scss";
 import { BsCart2 } from "react-icons/bs";
 import styled from "styled-components";
+import Contador from './Contador'
+import { arregloCompras } from "../../helpers/arregloCompras";
 
 const A = styled.a`
   display: flex;
@@ -17,34 +19,31 @@ const A = styled.a`
 
 const Detalles = () => {
   const { IdProduct } = useParams();
+  const navegar = useNavigate();
 
   const [ProductoS, setProductoS] = useState(null);
   const [CategoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
   const [ProductsCategoria, setProductsCategoria] = useState(null);
   const [Combo, setCombo] = useState(null);
-  const [Sabores, setSabores] = useState(null);
 
-  const [Conteo, setConteo] = useState(1);
+  const [SaboresImagen, setSaboresImagen] = useState(null);
+  const [SaboresColor, setSaboresColor] = useState(null);
 
-  const [Mensaje, setMensaje] = useState("");
-
-  const [TotalPagar, setTotalPagar] = useState(0);
-
+  const { Conteo, Mensaje, TotalPagar, handleRestar, handleSumar } = Contador(1, 0, IdProduct)
+  
   useEffect(() => {
     const nuevoProducto = Products.find(
       (Produ) => Produ.id.toString() === IdProduct
     );
+
     if (nuevoProducto) {
       setProductoS(nuevoProducto);
-      setTotalPagar(
-        TotalPagar + Number(nuevoProducto.precio.replace(/[^0-9]/gi, ""))
-      );
 
       const nuevaCate = categorias.find(
         (Cate) => Cate.id === nuevoProducto.categorias
       );
       setCategoriaSeleccionada(nuevaCate);
-      console.log(nuevaCate);
+      // console.log(nuevaCate);
 
       const nuevosProductos = Products.filter(
         (Productos) => Productos.id === nuevoProducto.id
@@ -58,39 +57,37 @@ const Detalles = () => {
       setCombo(nuevoCombo);
       // console.log(nuevoCombo)
 
-      const Sabor = nuevaCate.sabores.map(
+      const SaborImagen = nuevaCate.sabores.map(
         (SaboresSelect) => SaboresSelect.image
       );
-      setSabores(Sabor);
-      console.log(Sabor);
+      setSaboresImagen(SaborImagen);
+      // console.log(SaborImagen)
+
+      const SaborValor = nuevaCate.sabores.map(
+        (SaboresSelect) => SaboresSelect.color
+      );
+      setSaboresColor(SaborValor)
+      // console.log(SaborValor);
+
     } else {
       console.log("ERROR UnU");
     }
-  }, []);
+  }, [IdProduct]);
 
-  const handleRestar = () => {
-    if (Conteo === 1) {
-      setMensaje("Esta es la cantidad mínima que se puede comprar");
-    } else {
-      setMensaje("");
-      setConteo(Conteo - 1);
-      setTotalPagar(
-        TotalPagar - Number(ProductoS.precio.replace(/[^0-9]/gi, ""))
-      );
-    }
-  };
+  const handleAddPurchase = (e) => {
+       e.preventDefault()
 
-  const handleSumar = () => {
-    if (Conteo === 10) {
-      setMensaje("Esta es la cantidad máxima que se permite comprar");
-    } else {
-      setMensaje("");
-      setConteo(Conteo + 1);
-      setTotalPagar(
-        TotalPagar + Number(ProductoS.precio.replace(/[^0-9]/gi, ""))
-      );
-    }
-  };
+      let nuevaCompra = {
+        producto: ProductoS, 
+        contador: Conteo, 
+        total: TotalPagar
+      }
+      arregloCompras.push(nuevaCompra)
+      localStorage.setItem('misCompras', JSON.stringify(arregloCompras))
+
+      alert('Esta compra ha sido agregada al carrito')
+      navegar("../Home");
+  }
 
   return (
     <div>
@@ -108,7 +105,7 @@ const Detalles = () => {
       {ProductsCategoria &&
         ProductsCategoria.map((Seleccionado) => {
           return (
-            <div className="Container-Detalles">
+            <div className="Container-Detalles" key={Seleccionado.id}>
               <img src={Seleccionado.image} className="ImageSelect" alt="" />
 
               <div className="Container-Info">
@@ -151,16 +148,17 @@ const Detalles = () => {
       )}
 
       <div>
-        <img src={Sabores} alt="" />
+        <img src={SaboresImagen} alt="" />
       </div>
 
       <div className="container-Sabores-YFuncion">
-        {Sabores ? (
-          <>
-            {Sabores.map((combos) => (
-              <button className="BotonSabores">
-                <img className="ImagenSabores" src={combos} />
-              </button>
+        {SaboresImagen ? (
+          <> 
+            {SaboresImagen.map((imagen, indice) => (
+              SaboresColor[indice] === ProductoS.color ?
+                <img className="ImagenSabores opacidad-seleccionada" src={imagen} alt="" key={indice}/>
+                :
+                <img className="ImagenSabores opacidad-normal" src={imagen} alt="" />
             ))}
           </>
         ) : (
@@ -172,24 +170,34 @@ const Detalles = () => {
         {Combo ? (
           <>
             {Combo.map((combos) => (
-              <button className="Combos-btn">
-                <img src={combos.image} className="Combos-img" />
-                <div className="Container-Info">
-                <h1 className="Combos-Color">{combos.color}</h1>
-                <h1 className="Combos-Precio"> + {combos.precio}</h1>
-                </div>
+              // <button className="Combos-btn">
+              //   <img src={combos.image} className="Combos-img" />
+              //   <div className="Container-Info">
+              //   <h1 className="Combos-Color">{combos.color}</h1>
+              //   <h1 className="Combos-Precio"> + {combos.precio}</h1>
+              //   </div>
 
-              </button>
+              // </button>
+              <div className="Combos-btn">
+              <label className="LabelCombos">
+                <input type="checkbox"  className="input"/>
+                  <img src={combos.image} className="Combos-img" alt=""/>
+                  <div className="Container-Info">
+                    <h1 className="Combos-Color">{combos.color}</h1>
+                    <h1 className="Combos-Precio"> + {combos.precio}</h1>
+                  </div>
+                </label>
+              </div>
             ))}
           </>
         ) : (
           <></>
         )}
       </div>
-
-      <button className="btnAnadir">
-       <h4>Monto Total:<strong> $ {TotalPagar} MXN</strong></h4> 
-      </button>
+        <button className="btnAnadir" onClick={handleAddPurchase} to="/Home">
+          <h4>Agregar {Conteo} al carrito</h4>
+          <strong> $ {TotalPagar}</strong>
+        </button>
     </div>
   );
 };

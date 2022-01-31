@@ -89,6 +89,9 @@ h6 {
   }
 }
 
+
+
+
 .Container-Combos {
     
     margin-top: 3rem;
@@ -96,19 +99,31 @@ h6 {
 
   .Combos-btn {
     
+    display: inline-flex;
     background-color: white;
     border: none;
     border-radius: 1.2rem;
-    cursor: pointer;
-    height: auto;
     width: 45%;
     margin: .3rem;
+    
+
+    .LabelCombos{
+      margin: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .input{
+      float: right;
+
+    }
 
     .Combos-img {
-        margin: 1rem;
         width: 30%;
         display: flex;
-        margin-bottom: 1rem;
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+
     }
 
     .Container-Info {

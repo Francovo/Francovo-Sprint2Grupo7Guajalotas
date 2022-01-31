@@ -171,17 +171,18 @@ const Detalles = () => {
         {Combo ? (
           <>
             {Combo.map((combos) => (
-              // <button className="Combos-btn" key={combos.id}>
-              //   <img src={combos.image} className="Combos-img" alt="" />
+              // <button className="Combos-btn">
+              //   <img src={combos.image} className="Combos-img" />
               //   <div className="Container-Info">
-              //     <h1 className="Combos-Color">{combos.color}</h1>
-              //     <h1 className="Combos-Precio"> + {combos.precio}</h1>
+              //   <h1 className="Combos-Color">{combos.color}</h1>
+              //   <h1 className="Combos-Precio"> + {combos.precio}</h1>
               //   </div>
+
               // </button>
               <div className="Combos-btn">
               <label className="LabelCombos">
                 <input type="checkbox"  className="input"/>
-                  <img src={combos.image} className="Combos-img" alt=""/>
+                  <img src={combos.image} className="Combos-img" />
                   <div className="Container-Info">
                     <h1 className="Combos-Color">{combos.color}</h1>
                     <h1 className="Combos-Precio"> + {combos.precio}</h1>

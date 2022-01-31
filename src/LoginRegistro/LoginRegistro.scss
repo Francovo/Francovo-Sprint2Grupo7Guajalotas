@@ -1,0 +1,118 @@
+.containerLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 20px;
+}
+.containerRegistro{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 20px;
+}
+.spanStyle{
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.label{
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+}
+.email{
+    width: 100%;
+    height: 35px;
+    border: 1px solid #72757E;
+    box-sizing: border-box;
+    border-radius: 4px;
+    }
+
+ .nombre{
+    width: 100%;
+     height: 35px;
+     border: 1px solid #72757E;
+     box-sizing: border-box;
+     border-radius: 4px; 
+}
+.password{
+    width: 100%;
+    height: 35px;
+    border: 1px solid #72757E;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.iniSesion{
+    background: #039e32;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    &:hover{
+        background: #02521a;
+    }
+}
+
+.irRegistro{
+    background: #FA4A0C;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    &:hover{
+        background: #7e1006;
+}
+}
+
+.enviar{
+    background: #220bf1;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    &:hover{
+        background: #10037e;
+}
+}
+
+.linkRegistro{
+    text-decoration: none;
+    color: white;
+}
+
+.imagen{
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    width: 50px;
+    height: 50px;
+}

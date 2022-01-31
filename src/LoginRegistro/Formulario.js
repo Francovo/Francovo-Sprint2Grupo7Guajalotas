@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Button, Container, Stack } from 'react-bootstrap';
-import Form from "react-bootstrap/Form";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../index.css'
@@ -43,40 +41,43 @@ const {nombre, correo, password}=usuario;
 
    
   return (
-     
-        <div id="containerRegistro" >
-            <Container id="containerRegistro">
-                <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3 mt-5" controlId="formBasicText">
-                            <Form.Label>Nombre</Form.Label>
-                            <Form.Control type="text" name="nombre" value={nombre} onChange={handleChanged} placeholder="Ingresa tu nombre" />
-                        </Form.Group>
+     <div>
+          <img className="imagen" src='https://res.cloudinary.com/difxvqjj3/image/upload/v1643569386/Proyecto2/logo_m5bjlo.png' alt='logo' />
+                <div className="containerRegistro">
+                <div className="containerRegistro">
+                <form onSubmit={handleSubmit}>
+                        <div >
+                            <label className='label'>Nombre</label >
+                            <input className="nombre" type="text" name="nombre" value={nombre} onChange={handleChanged} placeholder="Ingresa tu nombre" />
+                        </div>
 
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Correo Electronico</Form.Label>
-                            <Form.Control type="email" name="correo" value={correo} onChange={handleChanged} placeholder="Ingresa tu correo" />
-                        </Form.Group>
+                        <div>
+                            <label className='label'>Correo Electronico</label>
+                            <input className="email" type="email" name="correo" value={correo} onChange={handleChanged} placeholder="Ingresa tu correo" />
+                        </div>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" name="password" value={password} onChange={handleChanged} placeholder="Password" />
-                        </Form.Group>
+                        <div >
+                            <label className="label">Password</label>
+                            <input className='password' type="password" name="password" value={password} onChange={handleChanged} placeholder="Password" />
+                        </div>
 
-                        <Stack gap={2} className="mb-3 mx-auto">
-                            <Button variant="primary" type="submit" onClick={() => postData()}>
+                        <div >
+                            <button className='enviar' type="submit" onClick={() => postData()}>
                                 Enviar
-                            </Button>
+                            </button>
 
-                            <Link
-                                className="btn btn-success "
-                                to="/ ">
-                                    Ir a Login
+                            <button className="iniSesion">
+                            <Link className="linkRegistro" to={`/`}>
+                                ir a Login
                             </Link>
-                    </Stack>
+                            </button>
+                        </div>
 
-                </Form>
-            </Container>
+                </form>
+                </div>
+             </div>
         </div>
+          
     )
 };
 
